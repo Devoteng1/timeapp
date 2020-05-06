@@ -15,7 +15,6 @@ const Layout = ({ children }) => {
            <Menu />
            <ContentTable />
            <Footer />
-       
            <div className='container'>{children}  </div>
         </Fragment>
     )
