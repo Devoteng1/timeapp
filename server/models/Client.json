@@ -1,0 +1,26 @@
+{
+    "client_id":"RS0001",
+    "client_name":"AIRTELTIGO",
+    "client_desc":"Telecom company",
+    "location":"accra",
+    "gps_address":"678YGF",
+    "billing_circle":"WEEKLY",
+    "email_address":"tigo@gmail.com",
+    "service_type":"CRM"
+},
+
+{"billing_circle":["WEEKLY"],
+    "service_type":["RMS"]
+    ,"support_person":[],
+    "photo":"no-photo.jpg",
+    "client_id":"RS0001",
+    "client_name":"AIRTELTIGO",
+    "client_desc":"Telecom company",
+    "location":"darkuman",
+    "gps_address":"678YGF",
+    "email_address":"tigo@gmail.com",
+    "createdAt":{"$date":{"$numberLong":"1588988151062"}},
+    "__v":{"$numberInt":"0"}}
+    {"_id":{"$oid":"5eb60bd0d9b05979875ec92b"},"billing_circle":["WEEKLY"],"service_type":["RMS"],"support_person":[],"photo":"no-photo.jpg","client_id":"RS0002","client_name":"VODAFONE","client_desc":"Telecom company","location":"accra","gps_address":"698YGF","email_address":"tigo@gmail.com","createdAt":{"$date":{"$numberLong":"1588988880803"}},"__v":{"$numberInt":"0"}}
+    {"_id":{"$oid":"5eb60c1dd9b05979875ec92c"},"billing_circle":["WEEKLY"],"service_type":["RMS"],"support_person":[],"photo":"no-photo.jpg","client_id":"RS0003","client_name":"PWC","client_desc":"Accounting company","location":"accra","gps_address":"69TYGF","email_address":"pwc@gmail.com","createdAt":{"$date":{"$numberLong":"1588988957859"}},"__v":{"$numberInt":"0"}}
+    {"_id":{"$oid":"5eb60c5bd9b05979875ec92d"},"billing_circle":["MONTHLY"],"service_type":["RMS"],"support_person":[],"photo":"no-photo.jpg","client_id":"RS0004","client_name":"RHEMA","client_desc":"IT services company","location":"accra","gps_address":"69T3GF","email_address":"rhema@gmail.com","createdAt":{"$date":{"$numberLong":"1588989019316"}},"__v":{"$numberInt":"0"}}
