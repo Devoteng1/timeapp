@@ -12,7 +12,7 @@ exports.getClients = asyncHandler(async (req ,res , next) => {
        const reqQuery = {...req.query};
 
        //Fields to exclude
-       const removeFields = ['select','sort'];
+       const removeFields = ['select','sort','page','limit'];
 
        //loop over removeField and delete them from reqQuery
        removeFields.forEach(param => delete reqQuery[param]);
@@ -40,13 +40,41 @@ exports.getClients = asyncHandler(async (req ,res , next) => {
         }else{
             query = query.sort('-createdAt')
         }
+
+        // Pagination
+        const page = parseInt(req.query.page, 10) || 1;
+        const limit = parseInt(req.query.limit,10) || 25;
+
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+        const total = await Client.countDocuments();
+
+        query = query.skip(startIndex).limit(limit);
        
        //Execute query
        const clients = await query;
+
+       //pagination result
+       const pagination = {};
+
+       if(endIndex < total){
+          pagination.next = {
+              page:page + 1,
+              limit
+          }
+       }
+
+       if(startIndex < 0){
+        pagination.prev = {
+            page:page - 1,
+            limit
+        }
+     }
        res.setHeader("Content-Type", "application/json");
        res.status(200).json({
            success: true,
            count: clients.length,
+           pagination,
            data: clients
        }) ;
 });

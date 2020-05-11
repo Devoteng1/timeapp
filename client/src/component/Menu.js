@@ -24,8 +24,8 @@ class Menu extends Component {
           </span>
         </a>
         <ul className="treeview-menu">
-          <li><a href="pages/layout/top-nav.html"><i className="fa fa-circle-o"></i> Create User</a></li>
-          <li><a href="pages/layout/boxed.html"><i className="fa fa-circle-o"></i> Export Data to Excel</a></li>
+          <li><a href="pages/layout/top-nav.html"><i className="fa fa-circle-o"></i> Create Users</a></li>
+          <li><a href="pages/layout/boxed.html"><i className="fa fa-circle-o"></i> Create Clients</a></li>
           <li><a href="pages/layout/fixed.html"><i className="fa fa-circle-o"></i> View Reports</a></li>
           <li><a href="pages/layout/collapsed-sidebar.html"><i className="fa fa-circle-o"></i> Dummy Option</a></li>
         </ul>

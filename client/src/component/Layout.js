@@ -3,8 +3,9 @@ import React, { Fragment } from 'react';
 import Header from './Header';
 import Menu from './Menu';
 import Footer from './Footer';
-import ContentTable from './ContentTable';
-import Login from '../auth/Login'
+//import ContentTable from './ContentTable';
+import ClientForm from '../appComponents/ClientForms';
+import Login from '../auth/Login';
 
 
 const Layout = ({ children }) => {
@@ -13,7 +14,7 @@ const Layout = ({ children }) => {
         <Fragment>
            <Header />
            <Menu />
-           <ContentTable />
+           <ClientForm />
            <Footer />
            <div className='container'>{children}  </div>
         </Fragment>

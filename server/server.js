@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const colors = require('colors');
 const errorHandler = require('./middleware/error');
+const cookieParser = require('cookie-parser');
 
 //import db connection
 const connectDB = require('./config/db');
@@ -11,6 +12,8 @@ connectDB();
 
 //import routes files
 const clients = require('./routes/clients.routes');
+const authRoute = require('./routes/authRoutes');
+
 
 //import logger
 //const logger = require('./middleware/logger');
@@ -27,9 +30,11 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 app.use(express.json());
+app.use(cookieParser());
 
 // Mount routers
 app.use('/api/v1/clients', clients)
+app.use('/api/v1/auth', authRoute)
 
 //error handler
 app.use(errorHandler);
