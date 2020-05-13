@@ -12,7 +12,7 @@ const {getClient,
 router
    .route('/')
    .get(getClients)
-   .post(protect,createClients);
+   .post(createClients);
 
 router
    .route('/:id')

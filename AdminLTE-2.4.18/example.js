@@ -1,20 +1,21 @@
 const mongoose = require('mongoose');
 
 const ClientSchema = new mongoose.Schema({
-    clientId:{
+    client_id:{
         type: String,
+        required:true,
         unique:true,
         trim:true,
         maxlength:6
     },
-    clientName: {
+    client_name: {
         type:String,
         required:[true,'Please enter a name'],
         unique:true,
         trim:true,
         maxlength:[50,'Name cannot be more than 50 characters']
     },
-    clientDesc:{
+    client_desc:{
         type:String,
         required:true,
         trim:true,
@@ -25,32 +26,32 @@ const ClientSchema = new mongoose.Schema({
         required:true,
         trim:true
     },
-    gpsAddress:{
+    gps_address:{
         type:String,
         required:true,
         trim:true
     },
-    billing:{
+    billing_circle:{
         type:[String],
         required:true,
         trim:true,
         enum:['WEEKLY', 'MONTHLY','YEARLY']
     },
-    clientPhone:{
+    phone_number:{
         type:String,
         maxlength:[10,'Phone number cannot be longer than 10 characters']
     },
-    email:{
+    email_address:{
         type:String,
         match:[/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,'please add a valid email'],
         required:true
     },
-    serviceType:{
+    service_type:{
         type: [String],
         required:true,
         enum:['RMS','PASTEL','POS']
     },
-    supportPerson:{
+    support_person:{
         type:[String],
         required:true,
         enum:['OTENG', 'STEVE','ABASS']
@@ -82,3 +83,5 @@ ClientSchema.pre('save', function(next){
 
 
 module.exports = mongoose.model('Client', ClientSchema)
+
+data: {clientName,clientDesc,clientLocation, location, clientPhone, gpsAddress, billing,email,serviceType,supportPerson}

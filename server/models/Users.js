@@ -30,7 +30,12 @@ const UserSchema = new mongoose.Schema({
     createdAt:{
         type:Date,
         default:Date.now
+    },
+    telephone:{
+        type:String,
+        required:[true,'Please add a telephone']
     }
+   
 });
 
 UserSchema.pre('save', async function(next){

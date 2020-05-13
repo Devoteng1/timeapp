@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const colors = require('colors');
+const cors = require('cors');
 const errorHandler = require('./middleware/error');
 const cookieParser = require('cookie-parser');
 
@@ -31,6 +32,7 @@ if(process.env.NODE_ENV === 'development'){
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 // Mount routers
 app.use('/api/v1/clients', clients)
